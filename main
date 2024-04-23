@@ -1,0 +1,13 @@
+from utils.texts_generator import generate_data, remove_files
+from handlers.thread_searcher import get_thread_results
+from handlers.multi_processing_searcher import get_multiprocess_results
+
+
+if __name__ == "__main__":
+    files, keywords = generate_data()
+    num_threads_or_processes = 5
+
+    get_thread_results(files, keywords, num_threads_or_processes)
+    get_multiprocess_results(files, keywords, num_threads_or_processes)
+
+    remove_files(files)
